@@ -1,6 +1,22 @@
 import express from "express"
+import { createRoom } from "../controllers/rooms";
+import { verifyAdmin } from "../utils/verifyToken"
 const router = express.Router();
 
+//CREATE
+router.post("/",verifyAdmin,  createRoom);
 
+//UPDATE
+router.put("/:id", verifyAdmin, updateRoom);
 
-export default router
+//DELETE
+router.delete("/:id", verifyAdmin, deleteRoom)
+//GET
+router.get("/:id", getRoom);
+
+//GET ALL
+router.get("/", getRooms);
+
+export default router  
+
+ 
