@@ -26,5 +26,7 @@ router.get("/find/:id", getHotel);
 //GET ALL
 
 router.get("/", getHotels);
+router.get("/countByCity", countByCity);
+router.get("/countByType", getHotels);
 
 export default router;
